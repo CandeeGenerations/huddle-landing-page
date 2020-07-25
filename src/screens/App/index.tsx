@@ -1,46 +1,74 @@
+/** @jsx jsx */
+import {jsx, Global} from '@emotion/core'
 import React from 'react'
 
+import Cta from './components/Cta'
+import About from './components/About'
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 const App = (): JSX.Element => {
-  // Try It Free Build The Community Your Fans Will Love Huddle re-imagines the
-  //     way we build communities. You have a voice, but so does your audience.
-  //     Create connections with your users as you engage in genuine discussion.
-  //     Get Started For Free Grow Together Generate meaningful discussions with
-  //     your audience and build a strong, loyal community. Think of the insightful
-  //     conversations you miss out on with a feedback form. Flowing Conversations
-  //     You wouldn't paginate a conversation in real life, so why do it online?
-  //     Our threads have just-in-time loading for a more natural flow. Your Users
-  //     It takes no time at all to integrate Huddle with your app's authentication
-  //     solution. This means, once signed in to your app, your users can start
-  //     chatting immediately. Ready To Build Your Community? Get Started For Free
-  //     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  //     tempor incididunt ut labore et dolore magna aliqua +1-543-123-4567
-  //     example@huddle.com About Us What We Do FAQ Career Blog Contact Us &copy;
-  //     Copyright 2018 Huddle. All rights reserved.
   return (
-    <div>
-      Coming soon..
-      <footer>
-        <p className="attribution">
-          Challenge by{' '}
-          <a
-            href="https://www.frontendmentor.io?ref=challenge"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Frontend Mentor
-          </a>
-          . Coded by{' '}
-          <a
-            href="https://candeegenerations.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Candee Generations
-          </a>
-          .
-        </p>
-      </footer>
-    </div>
+    <React.Fragment>
+      <Global
+        styles={{
+          html: {
+            margin: 0,
+            padding: 0,
+          },
+
+          body: {
+            margin: 0,
+            padding: 0,
+            fontSize: 18,
+            fontFamily: 'Open Sans',
+          },
+
+          'h1, h2, h3, h4, h5': {
+            fontFamily: 'Poppins',
+          },
+
+          '.container': {
+            width: '90%',
+            margin: '0 auto',
+
+            '@media only screen and (min-width: 33.75em)': {
+              width: '80%',
+            },
+
+            '@media only screen and (min-width: 60em)': {
+              width: '75%',
+              maxWidth: 1440,
+            },
+          },
+
+          '.left': {
+            textAlign: 'left',
+          },
+
+          '.right': {
+            textAlign: 'right',
+          },
+
+          '.center': {
+            textAlign: 'center',
+            margin: '0 auto',
+          },
+
+          '.justify': {
+            textAlign: 'justify',
+          },
+        }}
+      />
+
+      <Header />
+
+      <About />
+
+      <Cta />
+
+      <Footer />
+    </React.Fragment>
   )
 }
 
