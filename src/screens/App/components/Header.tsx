@@ -5,6 +5,7 @@ import logo from '../../../assets/images/logo.svg'
 import mockups from '../../../assets/images/illustration-mockups.svg'
 import heroBackgroundDesktop from '../../../assets/images/bg-hero-desktop.svg'
 
+import {mediaQuery} from '@app/helpers/constants'
 import Button, {ButtonColor} from '@app/components/Button'
 
 const Header = (): JSX.Element => {
@@ -27,8 +28,25 @@ const Header = (): JSX.Element => {
           </div>
         </div>
 
-        <div css={{marginTop: 50, display: 'flex', alignItems: 'center'}}>
-          <div css={{paddingRight: 50}}>
+        <div
+          css={{
+            marginTop: 50,
+            display: 'flex',
+            alignItems: 'center',
+            [mediaQuery]: {
+              flexDirection: 'column',
+            },
+          }}
+        >
+          <div
+            css={{
+              paddingRight: 50,
+              [mediaQuery]: {
+                marginBottom: 50,
+                textAlign: 'center',
+              },
+            }}
+          >
             <h1>Build The Community Your Fans Will Love</h1>
 
             <p css={{margin: '10px 0 50px'}}>

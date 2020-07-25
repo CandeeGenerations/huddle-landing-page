@@ -32,18 +32,14 @@ const App = (): JSX.Element => {
             width: '90%',
             margin: '0 auto',
 
-            '@media only screen and (min-width: 33.75em)': {
+            '@media only screen and (min-width: 540px)': {
               width: '80%',
             },
 
-            '@media only screen and (min-width: 60em)': {
+            '@media only screen and (min-width: 960px)': {
               width: '75%',
               maxWidth: 1440,
             },
-          },
-
-          '.left': {
-            textAlign: 'left',
           },
 
           '.right': {
@@ -53,10 +49,6 @@ const App = (): JSX.Element => {
           '.center': {
             textAlign: 'center',
             margin: '0 auto',
-          },
-
-          '.justify': {
-            textAlign: 'justify',
           },
         }}
       />

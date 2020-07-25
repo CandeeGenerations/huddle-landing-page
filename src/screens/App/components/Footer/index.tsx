@@ -1,10 +1,19 @@
 /** @jsx jsx */
 import {jsx} from '@emotion/core'
 
-import logo from '../../../assets/images/logo.svg'
+import SocialIcon from './components/SocialIcon'
+import {mediaQuery} from '@app/helpers/constants'
+
+import logo from '../../../../assets/images/logo.svg'
 
 const Footer = (): JSX.Element => {
-  const linkListStyle = {listStyleType: 'none', padding: 0}
+  const linkListStyle = {
+    listStyleType: 'none',
+    padding: 0,
+    [mediaQuery]: {
+      marginTop: 0,
+    },
+  }
   const linkItemStyle = {marginBottom: 20, cursor: 'pointer'}
 
   return (
@@ -24,8 +33,23 @@ const Footer = (): JSX.Element => {
           src={logo}
         />
 
-        <div css={{display: 'flex', marginTop: 20}}>
-          <div css={{flexBasis: '550px'}}>
+        <div
+          css={{
+            display: 'flex',
+            marginTop: 20,
+            [mediaQuery]: {
+              flexDirection: 'column',
+            },
+          }}
+        >
+          <div
+            css={{
+              flexBasis: '550px',
+              [mediaQuery]: {
+                flexBasis: 0,
+              },
+            }}
+          >
             <ul className="fa-ul">
               <li css={{marginBottom: 20}}>
                 <i className="fa-li fa fa-map-marker" />
@@ -45,12 +69,17 @@ const Footer = (): JSX.Element => {
             </ul>
           </div>
 
-          <div css={{flexGrow: 1}}>
+          <div
+            css={{
+              flexGrow: 1,
+              [mediaQuery]: {
+                marginTop: 30,
+              },
+            }}
+          >
             <ul css={linkListStyle}>
               <li css={linkItemStyle}>About Us</li>
-
               <li css={linkItemStyle}>What We Do</li>
-
               <li css={linkItemStyle}>FAQ</li>
             </ul>
           </div>
@@ -63,25 +92,34 @@ const Footer = (): JSX.Element => {
             </ul>
           </div>
 
-          <div css={{flexGrow: 1, paddingTop: 15}}>
-            <span className="fa-stack" css={{cursor: 'pointer'}}>
-              <i className="fa fa-circle-thin fa-stack-2x" />
-              <i className="fa fa-facebook fa-stack-1x fa-inverse" />
-            </span>
+          <div
+            css={{
+              flexGrow: 1,
+              paddingTop: 15,
+              [mediaQuery]: {
+                marginTop: 30,
+                textAlign: 'center',
+              },
+            }}
+          >
+            <SocialIcon type="facebook" />
             &nbsp;&nbsp;
-            <span className="fa-stack" css={{cursor: 'pointer'}}>
-              <i className="fa fa-circle-thin fa-stack-2x" />
-              <i className="fa fa-twitter fa-stack-1x fa-inverse" />
-            </span>
+            <SocialIcon type="twitter" />
             &nbsp;&nbsp;
-            <span className="fa-stack" css={{cursor: 'pointer'}}>
-              <i className="fa fa-circle-thin fa-stack-2x" />
-              <i className="fa fa-instagram fa-stack-1x fa-inverse" />
-            </span>
+            <SocialIcon type="instagram" />
           </div>
         </div>
 
-        <div className="right" css={{paddingBottom: 40}}>
+        <div
+          className="right"
+          css={{
+            paddingBottom: 40,
+            [mediaQuery]: {
+              marginTop: 20,
+              textAlign: 'center',
+            },
+          }}
+        >
           <small>&copy; Copyright 2018 Huddle. All rights reserved.</small>
         </div>
       </div>
